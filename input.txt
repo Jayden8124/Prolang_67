@@ -11,6 +11,7 @@ id1
 /* comment */
 
 // Test Case: Running 
+a = b + c * (d-e) / f * g + (c-a)
 1++2
 C--D
 T/K
@@ -19,7 +20,7 @@ if AB = BA then AB == BA
 (P*Q)
 
 // Test Case: Error
-//1.2
+1.2
 //012345
 //123abc
 // @

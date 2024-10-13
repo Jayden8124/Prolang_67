@@ -2,7 +2,6 @@
 import java.util.*;
 
 %%
-// import & definition (Option and Declaration) when generate it's will exclude syntax in java 
 %class Lexer
 %public
 %unicode
@@ -11,7 +10,16 @@ import java.util.*;
 %standalone
 
 %{
-    HashSet<String> symbolTable = new HashSet<String>();
+    int tokenIndex = 0;
+    HashMap<String, Integer> symbolTable = new HashMap<String, Integer>();
+
+    static final int IDENTIFIER = 100;
+    static final int KEYWORD    = 101;
+    static final int OPERATOR   = 102;
+    static final int INTEGER    = 103;
+    static final int STRING     = 104;
+    static final int PAREN      = 105;
+    static final int SEMICOLON  = 106;
 %}
 
 OPERATOR     = "+"|"-"|">="|"<="|"=="|"++"|"--"|"*"|"/"|"="|">"|"<"
@@ -22,64 +30,75 @@ IDENTIFIER   = {LETTER}({LETTER}|{DIGIT})*
 LETTER       = [a-zA-Z]
 STRING       = \"([^\"\\n]|\\.)*\"
 
-// Comment
 COMMENT      = "/*"([^*]|"*"[^/])*"*/"
 COMMENT_LINE = "//".*
 
-// Space
 WHITESPACE   = [ \t]+
 NEWLINE      = (\r\n|\n|\r)
 
-// Number
 DECIMAL      = {DIGIT}+"."{DIGIT}+  
 INTEGER      = {DIGIT}+
 LEADING_ZERO = 0{DIGIT}+            
 DIGIT        = [0-9]
 
 %%
-// expression1   { some action }  --> Lexical Rules (Action)
+{WHITESPACE}   { /* ไม่ทำอะไร */ }
 
-{WHITESPACE}   { /* Nothing */ }
+{COMMENT}      { /* ไม่ทำอะไร */ }
 
-{COMMENT}      { /* Nothing */ }
+{COMMENT_LINE} { /* ไม่ทำอะไร */ }
 
-{COMMENT_LINE} { /* Nothing */ }
+{NEWLINE}      { /* ไม่ทำอะไร */ }
 
-{NEWLINE}      { /* Nothing */ }
-
-// Input Floating
 {DECIMAL}      { 
                    System.out.println("Error: Invalid decimal number \"" + yytext() + "\" at line " + yyline + " column " + yycolumn);
                    System.exit(1);
                }
 
-// Leading Zero (Integers)
 {LEADING_ZERO} { 
                    System.out.println("Error: Invalid leading zero in number \"" + yytext() + "\" at line " + yyline + " column " + yycolumn);
                    System.exit(1);
                }
 
-{DIGIT}        { System.out.println("integers: " + yytext());}
+{INTEGER}      {
+                   System.out.println("integer: " + yytext() + " --> Token(" + yytext() + ") tokenIndex = " + tokenIndex + " tokenType = " + INTEGER);
+                   tokenIndex++;
+               }
 
-{OPERATOR}     { System.out.println("operator: " + yytext()); }
+{OPERATOR}     {
+                   System.out.println("operator: " + yytext() + " --> Token(" + yytext() + ") tokenIndex = " + tokenIndex + " tokenType = " + OPERATOR);
+                   tokenIndex++;
+               }
 
-{PAREN}        { System.out.println("parenthesis: " + yytext()); }
+{PAREN}        {
+                   System.out.println("parenthesis: " + yytext() + " --> Token(" + yytext() + ") tokenIndex = " + tokenIndex + " tokenType = " + PAREN);
+                   tokenIndex++;
+               }
 
-{SEMICOLON}    { System.out.println("semicolon: " + yytext()); }
+{SEMICOLON}    {
+                   System.out.println("semicolon: " + yytext() + " --> Token(" + yytext() + ") tokenIndex = " + tokenIndex + " tokenType = " + SEMICOLON);
+                   tokenIndex++;
+               }
 
-{KEYWORD}      { System.out.println("keyword: " + yytext()); }
+{KEYWORD}      {
+                   System.out.println("keyword: " + yytext() + " --> Token(" + yytext() + ") tokenIndex = " + tokenIndex + " tokenType = " + KEYWORD);
+                   tokenIndex++;
+               }
 
-{INTEGER}      { System.out.println("integer: " + yytext()); }
-
-{STRING}       { System.out.println("string: " + yytext()); }
+{STRING}       {
+                   System.out.println("string: " + yytext() + " --> Token(" + yytext() + ") tokenIndex = " + tokenIndex + " tokenType = " + STRING);
+                   tokenIndex++;
+               }
 
 {IDENTIFIER}   {
-                  if (symbolTable.contains(yytext())) {
-                      System.out.println("identifier \"" + yytext() + "\" already in symbol table");
-                  } else {
-                      symbolTable.add(yytext());
-                      System.out.println("new identifier: " + yytext());
-                  }
+                   Integer index = symbolTable.get(yytext());
+                   if (index != null) {
+                       System.out.println("identifier \"" + yytext() + "\" already in symbol table --> Token(" + yytext() + ") tokenIndex = " + index + " tokenType = " + IDENTIFIER);
+                   } else {
+                       index = tokenIndex++;
+                       symbolTable.put(yytext(), index);
+                       System.out.println("new identifier: " + yytext() + " --> Token(" + yytext() + ") tokenIndex = " + index + " tokenType = " + IDENTIFIER);
+                   }
                }
 
 {DIGIT}+{LETTER}+  {
@@ -87,8 +106,7 @@ DIGIT        = [0-9]
                    System.exit(1);
                }
 
- 
- .              {
-                  System.out.println("Error: Invalid input \"" + yytext() + "\" at line " + yyline + " column " + yycolumn);
-                  System.exit(1);
+.              {
+                   System.out.println("Error: Invalid input \"" + yytext() + "\" at line " + yyline + " column " + yycolumn);
+                   System.exit(1);
                }

@@ -97,11 +97,10 @@ public class Lexer {
   private static final String ZZ_ACTION_PACKED_0 =
     "\1\0\1\1\2\2\1\3\1\2\1\1\1\4\4\5"+
     "\2\6\1\7\1\5\11\10\1\0\1\11\2\0\1\2"+
-    "\1\0\1\12\1\13\1\14\1\15\7\10\1\0\1\16"+
-    "\12\10";
+    "\1\0\1\12\1\1\1\13\7\10\1\0\1\14\12\10";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[54];
+    int [] result = new int[53];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -130,12 +129,12 @@ public class Lexer {
     "\0\41\0\245\0\306\0\347\0\u0108\0\u0129\0\41\0\u014a"+
     "\0\u016b\0\u018c\0\u01ad\0\u01ce\0\u01ef\0\u0210\0\u0231\0\u0252"+
     "\0\u0273\0\204\0\41\0\u0294\0\u02b5\0\u02d6\0\u02f7\0\u0108"+
-    "\0\u0318\0\u0129\0\u016b\0\u0339\0\u035a\0\u037b\0\u039c\0\u03bd"+
-    "\0\u03de\0\u03ff\0\u0420\0\u02f7\0\u0441\0\u0462\0\u0483\0\u04a4"+
-    "\0\u04c5\0\u04e6\0\u0507\0\u0528\0\u0549\0\u056a";
+    "\0\u0318\0\u016b\0\u0339\0\u035a\0\u037b\0\u039c\0\u03bd\0\u03de"+
+    "\0\u03ff\0\u0420\0\u02f7\0\u0441\0\u0462\0\u0483\0\u04a4\0\u04c5"+
+    "\0\u04e6\0\u0507\0\u0528\0\u0549\0\u056a";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[54];
+    int [] result = new int[53];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -165,36 +164,36 @@ public class Lexer {
     "\1\3\41\0\1\4\36\0\5\32\1\33\14\32\1\34"+
     "\7\32\1\0\6\32\10\0\1\11\41\0\1\11\36\0"+
     "\1\35\3\0\1\36\37\0\1\37\1\0\2\40\3\0"+
-    "\1\41\1\0\16\41\12\0\1\37\1\0\2\42\3\0"+
+    "\1\41\1\0\16\41\12\0\1\37\1\0\2\16\3\0"+
     "\1\41\1\0\16\41\20\0\1\11\34\0\2\21\3\0"+
     "\1\21\1\0\16\21\14\0\2\21\3\0\1\21\1\0"+
-    "\10\21\1\43\5\21\14\0\2\21\3\0\1\21\1\0"+
-    "\6\21\1\44\1\45\6\21\14\0\2\21\3\0\1\21"+
-    "\1\0\3\21\1\43\12\21\14\0\2\21\3\0\1\21"+
-    "\1\0\2\21\1\46\13\21\14\0\2\21\3\0\1\21"+
-    "\1\0\12\21\1\47\3\21\14\0\2\21\3\0\1\21"+
-    "\1\0\2\21\1\50\13\21\14\0\2\21\3\0\1\21"+
-    "\1\0\4\21\1\51\11\21\14\0\2\21\3\0\1\21"+
-    "\1\0\4\21\1\52\11\21\2\32\3\0\34\32\7\35"+
-    "\1\53\31\35\2\36\3\0\34\36\14\0\2\54\44\0"+
+    "\10\21\1\42\5\21\14\0\2\21\3\0\1\21\1\0"+
+    "\6\21\1\43\1\44\6\21\14\0\2\21\3\0\1\21"+
+    "\1\0\3\21\1\42\12\21\14\0\2\21\3\0\1\21"+
+    "\1\0\2\21\1\45\13\21\14\0\2\21\3\0\1\21"+
+    "\1\0\12\21\1\46\3\21\14\0\2\21\3\0\1\21"+
+    "\1\0\2\21\1\47\13\21\14\0\2\21\3\0\1\21"+
+    "\1\0\4\21\1\50\11\21\14\0\2\21\3\0\1\21"+
+    "\1\0\4\21\1\51\11\21\2\32\3\0\34\32\7\35"+
+    "\1\52\31\35\2\36\3\0\34\36\14\0\2\53\44\0"+
     "\1\41\1\0\16\41\14\0\2\21\3\0\1\21\1\0"+
-    "\13\21\1\55\2\21\14\0\2\21\3\0\1\21\1\0"+
-    "\1\21\1\56\14\21\14\0\2\21\3\0\1\21\1\0"+
-    "\15\21\1\57\14\0\2\21\3\0\1\21\1\0\5\21"+
-    "\1\60\10\21\14\0\2\21\3\0\1\21\1\0\1\61"+
-    "\15\21\14\0\2\21\3\0\1\21\1\0\2\21\1\62"+
-    "\13\21\14\0\2\21\3\0\1\21\1\0\5\21\1\63"+
+    "\13\21\1\54\2\21\14\0\2\21\3\0\1\21\1\0"+
+    "\1\21\1\55\14\21\14\0\2\21\3\0\1\21\1\0"+
+    "\15\21\1\56\14\0\2\21\3\0\1\21\1\0\5\21"+
+    "\1\57\10\21\14\0\2\21\3\0\1\21\1\0\1\60"+
+    "\15\21\14\0\2\21\3\0\1\21\1\0\2\21\1\61"+
+    "\13\21\14\0\2\21\3\0\1\21\1\0\5\21\1\62"+
     "\10\21\13\35\1\4\25\35\14\0\2\21\3\0\1\21"+
-    "\1\0\2\21\1\43\13\21\14\0\2\21\3\0\1\21"+
+    "\1\0\2\21\1\42\13\21\14\0\2\21\3\0\1\21"+
     "\1\0\5\21\1\24\7\21\1\31\14\0\2\21\3\0"+
-    "\1\21\1\0\6\21\1\64\7\21\14\0\2\21\3\0"+
-    "\1\21\1\0\7\21\1\65\6\21\14\0\2\21\3\0"+
-    "\1\21\1\0\1\21\1\43\14\21\14\0\2\21\3\0"+
-    "\1\21\1\0\7\21\1\43\6\21\14\0\2\21\3\0"+
-    "\1\21\1\0\6\21\1\55\7\21\14\0\2\21\3\0"+
-    "\1\21\1\0\5\21\1\66\10\21\14\0\2\21\3\0"+
-    "\1\21\1\0\14\21\1\43\1\21\14\0\2\21\3\0"+
-    "\1\21\1\0\7\21\1\55\6\21";
+    "\1\21\1\0\6\21\1\63\7\21\14\0\2\21\3\0"+
+    "\1\21\1\0\7\21\1\64\6\21\14\0\2\21\3\0"+
+    "\1\21\1\0\1\21\1\42\14\21\14\0\2\21\3\0"+
+    "\1\21\1\0\7\21\1\42\6\21\14\0\2\21\3\0"+
+    "\1\21\1\0\6\21\1\54\7\21\14\0\2\21\3\0"+
+    "\1\21\1\0\5\21\1\65\10\21\14\0\2\21\3\0"+
+    "\1\21\1\0\14\21\1\42\1\21\14\0\2\21\3\0"+
+    "\1\21\1\0\7\21\1\54\6\21";
 
   private static int [] zzUnpacktrans() {
     int [] result = new int[1419];
@@ -241,11 +240,11 @@ public class Lexer {
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
     "\1\0\1\11\1\1\2\11\2\1\2\11\5\1\1\11"+
-    "\12\1\1\0\1\11\2\0\1\1\1\0\13\1\1\0"+
+    "\12\1\1\0\1\11\2\0\1\1\1\0\12\1\1\0"+
     "\13\1";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[54];
+    int [] result = new int[53];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -323,7 +322,16 @@ public class Lexer {
   private boolean zzEOFDone;
 
   /* user code: */
-    HashSet<String> symbolTable = new HashSet<String>();
+    int tokenIndex = 0;
+    HashMap<String, Integer> symbolTable = new HashMap<String, Integer>();
+
+    static final int IDENTIFIER = 100;
+    static final int KEYWORD    = 101;
+    static final int OPERATOR   = 102;
+    static final int INTEGER    = 103;
+    static final int STRING     = 104;
+    static final int PAREN      = 105;
+    static final int SEMICOLON  = 106;
 
 
   /**
@@ -738,83 +746,80 @@ public class Lexer {
         switch (zzAction < 0 ? zzAction : ZZ_ACTION[zzAction]) {
           case 1:
             { System.out.println("Error: Invalid input \"" + yytext() + "\" at line " + yyline + " column " + yycolumn);
-                  System.exit(1);
+                   System.exit(1);
             }
           // fall through
-          case 15: break;
+          case 13: break;
           case 2:
-            { /* Nothing */
+            { /* ไม่ทำอะไร */
             }
           // fall through
-          case 16: break;
+          case 14: break;
           case 3:
             { System.out.print(yytext());
             }
           // fall through
-          case 17: break;
+          case 15: break;
           case 4:
-            { System.out.println("parenthesis: " + yytext());
+            { System.out.println("parenthesis: " + yytext() + " --> Token(" + yytext() + ") tokenIndex = " + tokenIndex + " tokenType = " + PAREN);
+                   tokenIndex++;
+            }
+          // fall through
+          case 16: break;
+          case 5:
+            { System.out.println("operator: " + yytext() + " --> Token(" + yytext() + ") tokenIndex = " + tokenIndex + " tokenType = " + OPERATOR);
+                   tokenIndex++;
+            }
+          // fall through
+          case 17: break;
+          case 6:
+            { System.out.println("integer: " + yytext() + " --> Token(" + yytext() + ") tokenIndex = " + tokenIndex + " tokenType = " + INTEGER);
+                   tokenIndex++;
             }
           // fall through
           case 18: break;
-          case 5:
-            { System.out.println("operator: " + yytext());
+          case 7:
+            { System.out.println("semicolon: " + yytext() + " --> Token(" + yytext() + ") tokenIndex = " + tokenIndex + " tokenType = " + SEMICOLON);
+                   tokenIndex++;
             }
           // fall through
           case 19: break;
-          case 6:
-            { System.out.println("integers: " + yytext());
+          case 8:
+            { Integer index = symbolTable.get(yytext());
+                   if (index != null) {
+                       System.out.println("identifier \"" + yytext() + "\" already in symbol table --> Token(" + yytext() + ") tokenIndex = " + index + " tokenType = " + IDENTIFIER);
+                   } else {
+                       index = tokenIndex++;
+                       symbolTable.put(yytext(), index);
+                       System.out.println("new identifier: " + yytext() + " --> Token(" + yytext() + ") tokenIndex = " + index + " tokenType = " + IDENTIFIER);
+                   }
             }
           // fall through
           case 20: break;
-          case 7:
-            { System.out.println("semicolon: " + yytext());
+          case 9:
+            { System.out.println("string: " + yytext() + " --> Token(" + yytext() + ") tokenIndex = " + tokenIndex + " tokenType = " + STRING);
+                   tokenIndex++;
             }
           // fall through
           case 21: break;
-          case 8:
-            { if (symbolTable.contains(yytext())) {
-                      System.out.println("identifier \"" + yytext() + "\" already in symbol table");
-                  } else {
-                      symbolTable.add(yytext());
-                      System.out.println("new identifier: " + yytext());
-                  }
-            }
-          // fall through
-          case 22: break;
-          case 9:
-            { System.out.println("string: " + yytext());
-            }
-          // fall through
-          case 23: break;
           case 10:
             { System.out.println("Error: Invalid leading zero in number \"" + yytext() + "\" at line " + yyline + " column " + yycolumn);
                    System.exit(1);
             }
           // fall through
-          case 24: break;
+          case 22: break;
           case 11:
-            { System.out.println("Error: Invalid input \"" + yytext() + "\" at line " + yyline + " column " + yycolumn);
-                   System.exit(1);
+            { System.out.println("keyword: " + yytext() + " --> Token(" + yytext() + ") tokenIndex = " + tokenIndex + " tokenType = " + KEYWORD);
+                   tokenIndex++;
             }
           // fall through
-          case 25: break;
+          case 23: break;
           case 12:
-            { System.out.println("integer: " + yytext());
-            }
-          // fall through
-          case 26: break;
-          case 13:
-            { System.out.println("keyword: " + yytext());
-            }
-          // fall through
-          case 27: break;
-          case 14:
             { System.out.println("Error: Invalid decimal number \"" + yytext() + "\" at line " + yyline + " column " + yycolumn);
                    System.exit(1);
             }
           // fall through
-          case 28: break;
+          case 24: break;
           default:
             zzScanError(ZZ_NO_MATCH);
         }
