@@ -1,0 +1,26 @@
+//Test Case: Orignal Input
+A + B
+-
+*
+if
+then
+id1
+id2
+id1
+"Hello World"
+/* comment */
+
+// Test Case: Running 
+1++2
+C--D
+T/K
+if AB = BA then AB == BA
+;
+(P*Q)
+
+// Test Case: Error
+//1.2
+//012345
+//123abc
+// @
+// #

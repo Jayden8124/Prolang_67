@@ -1,0 +1,62 @@
+import java.util.*;
+
+%%
+
+%class Lexer
+%public
+%unicode
+%line
+%column
+%standalone
+
+%{
+    HashSet<String> symbolTable = new HashSet<String>();
+%}
+
+// Definitions
+WHITESPACE   = [ \t]+
+NEWLINE      = (\r\n|\n|\r)
+LETTER       = [a-zA-Z]
+DIGIT        = [0-9]
+IDENTIFIER   = {LETTER}({LETTER}|{DIGIT})*
+INTEGER      = {DIGIT}+
+STRING       = \"([^\"\\n]|\\.)*\"
+COMMENT      = "/*"([^*]|"*"[^/])*"*/"  //อันเก่า "/\\*[^*]*\\*+(?:[^/*][^*]*\\*+)*/"
+COMMENT_LINE = "//".* // อันเก่า "//.*"
+OPERATOR     = "++"|"--"|">="|"<="|"=="|"+"|"-"|"*"|"/"|"="|">"|"<"
+PAREN        = "("|")"
+SEMICOLON    = ";"
+KEYWORD      = "if"|"then"|"else"|"endif"|"while"|"do"|"endwhile"|"print"|"newline"|"read"
+
+%%
+
+{WHITESPACE}   { /* Skip whitespace */ }
+
+{COMMENT}      { /* Skip comments */ }
+
+{COMMENT_LINE} { /* Skip single line comments */ }
+
+{OPERATOR}     { System.out.println("operator: " + yytext()); }
+
+{PAREN}        { System.out.println("parenthesis: " + yytext()); }
+{SEMICOLON}    { System.out.println("semicolon: " + yytext()); }
+
+{KEYWORD}      { System.out.println("keyword: " + yytext()); }
+
+{INTEGER}      { System.out.println("integer: " + yytext()); }
+
+{STRING}       { System.out.println("string: " + yytext()); }
+
+{IDENTIFIER}   {
+                  if (symbolTable.contains(yytext())) {
+                      System.out.println("identifier \"" + yytext() + "\" already in symbol table");
+                  } else {
+                      symbolTable.add(yytext());
+                      System.out.println("new identifier: " + yytext());
+                  }
+               }
+
+.              {
+                  System.out.println("Error: Invalid input \"" + yytext() + "\" at line " + yyline + " column " + yycolumn);
+                  System.exit(1);
+               }
